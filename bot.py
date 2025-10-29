@@ -102,7 +102,13 @@ def main():
     
     # बॉट को पोलिंग (polling) शुरू करने के लिए रन करें
     print("ChillMiner Bot (Production Mode) शुरू हो रहा है...")
-    application.run_polling()
+    application.run_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        url_path=token,
+        webhook_url=f"https://{WEBHOOK_URL}/{token}"
+    )
+    print(f"ChillMiner Bot Webhook Mode में पोर्ट {PORT} पर चल रहा है...")
 
 if __name__ == '__main__':
     main()
