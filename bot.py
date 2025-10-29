@@ -105,4 +105,4 @@ def main():
     application.run_polling()
 
 if __name__ == '__main__':
-main()
+    main()
